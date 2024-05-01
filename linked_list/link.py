@@ -16,7 +16,7 @@ class LinkedList:
         if self.first == None:
             return True
 
-    def append(self, value):
+    def append_to_last(self, value):
         new_node = Node(value)
         if self.is_empty():
             self.first = self.last = new_node
@@ -29,11 +29,10 @@ class LinkedList:
         if self.is_empty():
             raise Exception("List is empty")
 
-        removed_value = self.first.value
-        self.first = self.first.next 
-        if self.first is None:  
-            self.last = None
-            return removed_value
+        second = self.first.next
+        self.first.next = None
+        self.first = second
+        
         
     def remove_last(self):
 
@@ -54,6 +53,19 @@ class LinkedList:
         current.next = None  
         self.last = current
         return removed_value
+    
+    def append_to_first(self,value):
+        new_node = Node(value)
+        if self.is_empty():
+            self.first = self.last = new_node
+        else:
+            new_node.next = self.first
+            self.first = new_node
+        
+    
+        
+        
+            
 
             
             
