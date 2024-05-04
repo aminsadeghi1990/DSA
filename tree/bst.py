@@ -63,3 +63,6 @@ print(new_tree.lookup(20))
 print(new_tree.lookup(19))
 print(new_tree.lookup(13))
 print(new_tree.lookup(7))
+new_tree.pre_order_traverse(new_tree.root)
+
+
