@@ -37,12 +37,15 @@ class Tree():
             else:
                 return True
         return False
-    
+    def pre_order_traverse(self):
+        self.pre_order_traverse(self.root)
+        
     def pre_order_traverse(self, current):
-        print(current.value)
-        pre_order_traverse(current.leftchild)
-        pre_order_traverse(current.rightchild)
-        pass
+        if current!= None:
+            print(current.value)
+            self.pre_order_traverse(current.leftchild)
+            self.pre_order_traverse(current.rightchild)
+      
         
 
 new_tree = Tree()
