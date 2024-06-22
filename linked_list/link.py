@@ -61,14 +61,7 @@ class LinkedList:
         else:
             new_node.next = self.first
             self.first = new_node
-        
     
-        
-        
-            
-
-            
-            
 
 
 linked_list = LinkedList()
