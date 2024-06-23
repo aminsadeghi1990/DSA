@@ -15,6 +15,42 @@ class Heap:
             self.my_list[self.size] = value
             self.size += 1
             self.bubble_up()
+            
+    def remove(self):
+        
+        if self.size == 0:
+            return "list is EMPTY !!!!"
+        else:
+            self.my_list[0] = self.my_list[self.size - 1]
+            index = 0
+            while index <= self.size and not self.is_valid_parent(index):
+                
+                larger_child_index = self.larger_child_index(index)
+                self.swap(index, larger_child_index)
+                index = larger_child_index
+            
+        
+    def leftchild_index(self, index):
+        return index*2 +1
+    
+    def rightchild_index(self, index):
+        return index*2 +2
+        
+    def leftchild(self, index):
+        return self.my_list[self.leftchild_index(index)]
+    
+    def rightchild(self, index):
+        return self.my_list[self.rightchild_index(index)]
+    
+    def is_valid_parent(self, index) -> bool:
+        return self.my_list[index] >= self.leftchild(
+            index) or self.my_list[index] >= self.rightchild(index)
+        
+    def larger_child_index(self, index):
+        if self.leftchild(index) > self.rightchild(index):
+            return self.leftchild_index(index)
+        else:
+            return self.rightchild_index(index)
 
     def bubble_up(self):
         index = self.size - 1
@@ -25,12 +61,11 @@ class Heap:
                 index = parent_index
             else:
                 break
+  
 
 
-# Create an instance of the class
 heap = Heap()
 
-# Insert values into the heap
 heap.insert(4)
 heap.insert(96)
 heap.insert(10)
@@ -42,5 +77,4 @@ heap.insert(33)
 heap.insert(12)
 heap.insert(15)
 
-# Print the list to verify
 print(heap.my_list)
