@@ -10,7 +10,7 @@ class Heap:
 
     def insert(self, value):
         if self.size == len(self.my_list):
-            return "List is full!!!"
+            return "List is FULL!!!"
         else:
             self.my_list[self.size] = value
             self.size += 1
@@ -19,7 +19,7 @@ class Heap:
     def remove(self):
         
         if self.size == 0:
-            return "list is EMPTY !!!!"
+            return "List is EMPTY !!!!"
         else:
             self.my_list[0] = self.my_list[self.size - 1]
             index = 0
