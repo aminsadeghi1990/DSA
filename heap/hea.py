@@ -20,7 +20,10 @@ class Heap:
         
         if self.size == 0:
             return "List is EMPTY !!!!"
+        
         else:
+            
+            root = self.my_list[0]
             self.my_list[0] = self.my_list[self.size - 1]
             index = 0
             while index <= self.size and not self.is_valid_parent(index):
@@ -28,7 +31,7 @@ class Heap:
                 larger_child_index = self.larger_child_index(index)
                 self.swap(index, larger_child_index)
                 index = larger_child_index
-            
+        return root  
         
     def leftchild_index(self, index):
         return index*2 +1
@@ -43,10 +46,20 @@ class Heap:
         return self.my_list[self.rightchild_index(index)]
     
     def is_valid_parent(self, index) -> bool:
+        
+        if not self.leftchild_index(index):
+            return True
+        if not self.rightchild_index(index):
+            return self.my_list(index) >= self.leftchild(index)
         return self.my_list[index] >= self.leftchild(
             index) or self.my_list[index] >= self.rightchild(index)
         
     def larger_child_index(self, index):
+        
+        if not self.has_left_child(index):
+            return index
+        if not self.rightchild_index(index):
+            return index
         if self.leftchild(index) > self.rightchild(index):
             return self.leftchild_index(index)
         else:
@@ -61,20 +74,22 @@ class Heap:
                 index = parent_index
             else:
                 break
-  
-
+            
+    def has_left_child(self, index)-> bool:
+        return self.leftchild_index(index) <= self.size
+        
+    def has_right_child(self, index) -> bool:
+        return self.rightchild_index(index) <= self.size
 
 heap = Heap()
 
-heap.insert(4)
-heap.insert(96)
+
 heap.insert(10)
-heap.insert(2)
-heap.insert(17)
 heap.insert(5)
-heap.insert(8)
-heap.insert(33)
-heap.insert(12)
-heap.insert(15)
+heap.insert(17)
+heap.insert(22)
+
+a=heap.remove()
 
 print(heap.my_list)
+print(a)
