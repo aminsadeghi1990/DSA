@@ -35,11 +35,10 @@ class Trie:
         return True
 
 
-# Example usage:
 trie = Trie()
 trie.insert("apple")
-print(trie.search("apple"))   # True
-print(trie.search("app"))     # False
-print(trie.starts_with("app"))  # True
+print(trie.search("apple"))   
+print(trie.search("app"))     
+print(trie.starts_with("app")) 
 trie.insert("app")
-print(trie.search("app"))     # True
+print(trie.search("app"))     
