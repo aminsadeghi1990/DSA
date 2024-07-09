@@ -88,8 +88,10 @@ heap.insert(10)
 heap.insert(5)
 heap.insert(17)
 heap.insert(22)
+heap.insert(34)
+heap.insert(7)
+heap.insert(44)
+heap.insert(11)
 
-a=heap.remove()
 
 print(heap.my_list)
-print(a)
