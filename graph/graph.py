@@ -38,16 +38,21 @@ new_graph.add_node("amin")
 new_graph.add_node("mobin")
 new_graph.add_node("mehdi")
 new_graph.add_node("shariat")
+new_graph.add_node("ahoora")
 new_graph.add_node("epack")
 new_graph.add_node("mahmoodhood")
 new_graph.add_node("nosrat")
 
-new_graph.add_edge("amin", "mobin")
+
 new_graph.add_edge("amin", "mehdi")
 new_graph.add_edge("mahmoodhood", "mobin")
 new_graph.add_edge("amin", "nosrat")
 new_graph.add_edge("mehdi", "mobin")
 new_graph.add_edge("amin", "mobin")
-
+new_graph.add_edge("chaghal", "mobin")
+new_graph.add_edge("ahoora", "mobin")
+new_graph.add_edge("ahoora", "amin")
+new_graph.add_edge("mehdi", "ahoora")
 new_graph.print_nodes_connection()
+
 
