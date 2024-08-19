@@ -70,10 +70,6 @@ class Graph:
                 return {node:edge}
     
     
-
-        
-
-
 new_graph = Graph()
 new_graph.add_node("amin")
 new_graph.add_node("mobin")
