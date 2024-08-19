@@ -62,6 +62,14 @@ class Graph:
                     node.remove(i)
                     print(f"node {i} is removed from from adjacency dictionary")
         return
+    
+    def find_node(self, specific_node:str):
+        for node, edge in self.adjacency_dictionary.items():
+            if node == specific_node:
+                print(f"{node}:{edge}")
+                return {node:edge}
+    
+    
 
         
 
@@ -88,9 +96,10 @@ new_graph.add_edge("ahoora", "mobin")
 new_graph.add_edge("ahoora", "amin")
 new_graph.add_edge("mehdi", "ahoora")
 
-new_graph.delete_edge("mehdi","ahoora")
-new_graph.delete_node("amin")
-new_graph.delete_node("mahmoodhood")
+# new_graph.delete_edge("mehdi","ahoora")
+# new_graph.delete_node("amin")
+# new_graph.delete_node("mahmoodhood")
 new_graph.print_nodes_connection()
 
+new_graph.find_node("mobin")
 
